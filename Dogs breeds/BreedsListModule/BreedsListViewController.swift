@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 public protocol BreedsListDisplayLogic: class {
     func displayData(viewModel: BreedsList.Model.ViewModel)
@@ -15,6 +16,8 @@ public protocol BreedsListDisplayLogic: class {
 public class BreedsListViewController: UIViewController {
     
     // MARK: - UI elements
+    private var breedsCollection = BreedsCollectionView()
+    
     public var router: (NSObjectProtocol & BreedsListRoutingLogic & BreedsListDataPassing)?
     private var interactor: BreedsListBusinessLogic?
     
@@ -47,7 +50,19 @@ public class BreedsListViewController: UIViewController {
     }
     
     private func userInterfaceSetup() {
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.4, green: 0.6862745098, blue: 1, alpha: 1)
+        
+        navigationItem.title = "Breeds"
+        configureBreedsCollection()
+    }
+    
+    private func configureBreedsCollection() {
+        view.addSubview(breedsCollection)
+        breedsCollection.snp.remakeConstraints { make in
+            make.top.bottom.leading.trailing.equalToSuperview()
+        }
+        
+        breedsCollection.cellDelegate = self
     }
     
     // MARK: - Routing
@@ -67,7 +82,14 @@ extension BreedsListViewController: BreedsListDisplayLogic {
     public func displayData(viewModel: BreedsList.Model.ViewModel) {
         switch viewModel {
         case .displayBreeds(let items):
-            break
+            breedsCollection.set(breeds: items)
+            breedsCollection.reloadData()
         }
+    }
+}
+
+extension BreedsListViewController: BreedsCollectionViewDelegate {
+    public func breedSelected(_ breedId: String) {
+        router?.routeToInfo(breedId)
     }
 }

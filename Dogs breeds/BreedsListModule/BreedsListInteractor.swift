@@ -13,13 +13,13 @@ public protocol BreedsListBusinessLogic {
 }
 
 public protocol BreedsListDataStore {
-    //var name: String { get set }
+    var breeds: [BreedItemModel] { get }
 }
 
 public class BreedsListInteractor: BreedsListBusinessLogic, BreedsListDataStore {
     
     // MARK: - Data
-    private var breeds = [BreedItemImage]()
+    public var breeds = [BreedItemModel]()
     
     // MARK: - Services
     public var presenter: BreedsListPresentationLogic?
@@ -38,7 +38,7 @@ public class BreedsListInteractor: BreedsListBusinessLogic, BreedsListDataStore 
         guard let data = try? Data(contentsOf: fileUrl, options: .mappedIfSafe) else { return }
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let breedsDecoded = try? decoder.decode([BreedItemImage].self, from: data) else { return }
+        guard let breedsDecoded = try? decoder.decode([BreedItemModel].self, from: data) else { return }
         breeds = breedsDecoded
         presenter?.presentData(response: .presentBreeds(breedsDecoded))
     }

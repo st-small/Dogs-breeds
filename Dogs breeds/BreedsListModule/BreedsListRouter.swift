@@ -10,7 +10,7 @@ import UIKit
 
 @objc
 public protocol BreedsListRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToInfo(_ breedId: String)
 }
 
 public protocol BreedsListDataPassing {
@@ -18,26 +18,21 @@ public protocol BreedsListDataPassing {
 }
 
 public class BreedsListRouter: NSObject, BreedsListRoutingLogic, BreedsListDataPassing {
+    
     public weak var viewController: BreedsListViewController?
     public var dataStore: BreedsListDataStore?
     
     // MARK: - Routing
-    //func routeToSomewhere(segue: UIStoryboardSegue?) {
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    public func routeToInfo(_ breedId: String) {
+        let detail = BreedInfoViewController()
+        var destinationDS = detail.router!.dataStore!
+        passDataShowBreedDetails(source: dataStore!, destination: &destinationDS, breedId: breedId)
+        viewController?.navigationController?.pushViewController(detail, animated: true)
+    }
     
     // MARK: - Passing data
-    //func passDataToSomewhere(source: BreedsListDataStore, destination: inout SomewhereDataStore) {
-    //  destination.name = source.name
-    //}
+    private func passDataShowBreedDetails(source: BreedsListDataStore, destination: inout BreedInfoDataStore, breedId: String) {
+        guard let breed = source.breeds.first(where: { $0.id == breedId }) else { return }
+        destination.breed = breed
+    }
 }

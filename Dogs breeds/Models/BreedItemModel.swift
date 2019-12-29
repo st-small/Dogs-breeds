@@ -1,5 +1,5 @@
 //
-//  BreedItemImage.swift
+//  BreedItemModel.swift
 //  Dogs breeds
 //
 //  Created by Stanly Shiyanovskiy on 23.12.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BreedItemImage: Codable {
+public struct BreedItemModel: Codable {
     public let breeds: [BreedItem]
     public let id: String
     public let url: String

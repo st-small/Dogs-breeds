@@ -20,8 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = BreedsListViewController()
-        window?.rootViewController?.view.backgroundColor = .red
+        let listVc = BreedsListViewController()
+        let navigator = UINavigationController(rootViewController: listVc)
+        window?.rootViewController = navigator
         window?.makeKeyAndVisible()
     }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52024D9823B3D78700F1AA8C /* BreedsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52024D9723B3D78700F1AA8C /* BreedsCollectionView.swift */; };
+		52024D9A23B3D96700F1AA8C /* BreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52024D9923B3D96700F1AA8C /* BreedCell.swift */; };
 		520925A723B12A2700EF989E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520925A623B12A2700EF989E /* AppDelegate.swift */; };
 		520925A923B12A2700EF989E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520925A823B12A2700EF989E /* SceneDelegate.swift */; };
 		520925B023B12A2800EF989E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520925AF23B12A2800EF989E /* Assets.xcassets */; };
@@ -21,14 +23,23 @@
 		524E442A23B153D700F743E6 /* breeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E442923B153D700F743E6 /* breeds.json */; };
 		524E442C23B155B600F743E6 /* BreedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E442B23B155B600F743E6 /* BreedItem.swift */; };
 		524E442E23B155D200F743E6 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E442D23B155D200F743E6 /* Size.swift */; };
-		524E443023B155EC00F743E6 /* BreedItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E442F23B155EC00F743E6 /* BreedItemImage.swift */; };
+		524E443023B155EC00F743E6 /* BreedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E442F23B155EC00F743E6 /* BreedItemModel.swift */; };
 		524E443323B1578E00F743E6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 524E443223B1578E00F743E6 /* SDWebImage */; };
 		524E443523B1578E00F743E6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 524E443423B1578E00F743E6 /* SDWebImageMapKit */; };
 		524E443823B158DE00F743E6 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 524E443723B158DE00F743E6 /* RappleProgressHUD */; };
 		524E443B23B15A9300F743E6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 524E443A23B15A9300F743E6 /* SnapKit */; };
+		52724E0023B8EBA20042C1C4 /* BreedInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724DFA23B8EBA20042C1C4 /* BreedInfoPresenter.swift */; };
+		52724E0223B8EBA20042C1C4 /* BreedInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724DFC23B8EBA20042C1C4 /* BreedInfoRouter.swift */; };
+		52724E0323B8EBA20042C1C4 /* BreedInfoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724DFD23B8EBA20042C1C4 /* BreedInfoModels.swift */; };
+		52724E0423B8EBA20042C1C4 /* BreedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724DFE23B8EBA20042C1C4 /* BreedInfoViewController.swift */; };
+		52724E0523B8EBA20042C1C4 /* BreedInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724DFF23B8EBA20042C1C4 /* BreedInfoInteractor.swift */; };
+		52724E0723B8FC050042C1C4 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724E0623B8FC050042C1C4 /* String + Extension.swift */; };
+		52724E0A23B8FE880042C1C4 /* BreedInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52724E0923B8FE880042C1C4 /* BreedInfoRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52024D9723B3D78700F1AA8C /* BreedsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsCollectionView.swift; sourceTree = "<group>"; };
+		52024D9923B3D96700F1AA8C /* BreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCell.swift; sourceTree = "<group>"; };
 		520925A323B12A2700EF989E /* Dogs breeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dogs breeds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		520925A623B12A2700EF989E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520925A823B12A2700EF989E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +55,14 @@
 		524E442923B153D700F743E6 /* breeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breeds.json; sourceTree = "<group>"; };
 		524E442B23B155B600F743E6 /* BreedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedItem.swift; sourceTree = "<group>"; };
 		524E442D23B155D200F743E6 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
-		524E442F23B155EC00F743E6 /* BreedItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedItemImage.swift; sourceTree = "<group>"; };
+		524E442F23B155EC00F743E6 /* BreedItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedItemModel.swift; sourceTree = "<group>"; };
+		52724DFA23B8EBA20042C1C4 /* BreedInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoPresenter.swift; sourceTree = "<group>"; };
+		52724DFC23B8EBA20042C1C4 /* BreedInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoRouter.swift; sourceTree = "<group>"; };
+		52724DFD23B8EBA20042C1C4 /* BreedInfoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoModels.swift; sourceTree = "<group>"; };
+		52724DFE23B8EBA20042C1C4 /* BreedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoViewController.swift; sourceTree = "<group>"; };
+		52724DFF23B8EBA20042C1C4 /* BreedInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoInteractor.swift; sourceTree = "<group>"; };
+		52724E0623B8FC050042C1C4 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		52724E0923B8FE880042C1C4 /* BreedInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52024D9623B3D77500F1AA8C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52024D9723B3D78700F1AA8C /* BreedsCollectionView.swift */,
+				52024D9923B3D96700F1AA8C /* BreedCell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		5209259A23B12A2700EF989E = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +112,9 @@
 				520925D123B1319000EF989E /* Services */,
 				520925CB23B1307B00EF989E /* Models */,
 				520925BA23B12A5D00EF989E /* BreedsListModule */,
+				52724DF923B8EB7E0042C1C4 /* BreedInfoModule */,
 				520925BB23B12BC600EF989E /* Environment */,
+				52A1168D23B3DFB200B3AA5B /* Helpers */,
 			);
 			path = "Dogs breeds";
 			sourceTree = "<group>";
@@ -98,6 +127,7 @@
 				520925BF23B12BE300EF989E /* BreedsListModels.swift */,
 				520925C023B12BE300EF989E /* BreedsListViewController.swift */,
 				520925C123B12BE300EF989E /* BreedsListInteractor.swift */,
+				52024D9623B3D77500F1AA8C /* Common */,
 			);
 			path = BreedsListModule;
 			sourceTree = "<group>";
@@ -120,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				524E442B23B155B600F743E6 /* BreedItem.swift */,
-				524E442F23B155EC00F743E6 /* BreedItemImage.swift */,
+				524E442F23B155EC00F743E6 /* BreedItemModel.swift */,
 				524E442D23B155D200F743E6 /* Size.swift */,
 			);
 			path = Models;
@@ -131,6 +161,35 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		52724DF923B8EB7E0042C1C4 /* BreedInfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				52724DFA23B8EBA20042C1C4 /* BreedInfoPresenter.swift */,
+				52724DFC23B8EBA20042C1C4 /* BreedInfoRouter.swift */,
+				52724DFD23B8EBA20042C1C4 /* BreedInfoModels.swift */,
+				52724DFE23B8EBA20042C1C4 /* BreedInfoViewController.swift */,
+				52724DFF23B8EBA20042C1C4 /* BreedInfoInteractor.swift */,
+				52724E0823B8FE710042C1C4 /* Common */,
+			);
+			path = BreedInfoModule;
+			sourceTree = "<group>";
+		};
+		52724E0823B8FE710042C1C4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52724E0923B8FE880042C1C4 /* BreedInfoRow.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		52A1168D23B3DFB200B3AA5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				52724E0623B8FC050042C1C4 /* String + Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,17 +276,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52024D9A23B3D96700F1AA8C /* BreedCell.swift in Sources */,
+				52724E0423B8EBA20042C1C4 /* BreedInfoViewController.swift in Sources */,
+				52724E0023B8EBA20042C1C4 /* BreedInfoPresenter.swift in Sources */,
 				520925C723B12BE300EF989E /* BreedsListInteractor.swift in Sources */,
 				520925A723B12A2700EF989E /* AppDelegate.swift in Sources */,
 				520925A923B12A2700EF989E /* SceneDelegate.swift in Sources */,
-				524E443023B155EC00F743E6 /* BreedItemImage.swift in Sources */,
+				524E443023B155EC00F743E6 /* BreedItemModel.swift in Sources */,
+				52724E0A23B8FE880042C1C4 /* BreedInfoRow.swift in Sources */,
 				524E442C23B155B600F743E6 /* BreedItem.swift in Sources */,
 				520925C223B12BE300EF989E /* BreedsListPresenter.swift in Sources */,
 				520925C623B12BE300EF989E /* BreedsListViewController.swift in Sources */,
+				52724E0723B8FC050042C1C4 /* String + Extension.swift in Sources */,
+				52724E0523B8EBA20042C1C4 /* BreedInfoInteractor.swift in Sources */,
 				520925C523B12BE300EF989E /* BreedsListModels.swift in Sources */,
 				520925C423B12BE300EF989E /* BreedsListRouter.swift in Sources */,
+				52024D9823B3D78700F1AA8C /* BreedsCollectionView.swift in Sources */,
 				520925CD23B130DF00EF989E /* Constants.swift in Sources */,
 				524E442E23B155D200F743E6 /* Size.swift in Sources */,
+				52724E0223B8EBA20042C1C4 /* BreedInfoRouter.swift in Sources */,
+				52724E0323B8EBA20042C1C4 /* BreedInfoModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
