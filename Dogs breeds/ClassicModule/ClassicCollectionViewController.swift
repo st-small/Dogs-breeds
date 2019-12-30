@@ -1,25 +1,24 @@
 //
-//  BreedsListViewController.swift
+//  ClassicCollectionViewController.swift
 //  Dogs breeds
 //
-//  Created by Stanly Shiyanovskiy on 23.12.2019.
+//  Created by Stanly Shiyanovskiy on 30.12.2019.
 //  Copyright (c) 2019 Stanly Shiyanovskiy. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-public protocol BreedsListDisplayLogic: class {
-    func displayData(viewModel: BreedsList.Model.ViewModel)
+public protocol ClassicCollectionDisplayLogic: class {
+    func displayData(viewModel: ClassicCollection.Model.ViewModel)
 }
 
-public class BreedsListViewController: UIViewController {
+public class ClassicCollectionViewController: UIViewController {
     
     // MARK: - UI elements
-    private var breedsCollection = BreedsCollectionView()
+    private var breedsCollection = ClassicCollectionView()
     
-    public var router: (NSObjectProtocol & BreedsListRoutingLogic & BreedsListDataPassing)?
-    private var interactor: BreedsListBusinessLogic?
+    public var router: (NSObjectProtocol & ClassicCollectionRoutingLogic & ClassicCollectionDataPassing)?
+    private var interactor: ClassicCollectionBusinessLogic?
     
     
     // MARK: - Object lifecycle
@@ -36,9 +35,9 @@ public class BreedsListViewController: UIViewController {
     // MARK: Setup
     private func setup() {
         let viewController = self
-        let interactor = BreedsListInteractor()
-        let presenter = BreedsListPresenter()
-        let router = BreedsListRouter()
+        let interactor = ClassicCollectionInteractor()
+        let presenter = ClassicCollectionPresenter()
+        let router = ClassicCollectionRouter()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
@@ -52,7 +51,7 @@ public class BreedsListViewController: UIViewController {
     private func userInterfaceSetup() {
         view.backgroundColor = #colorLiteral(red: 0.7129858136, green: 0.8651095629, blue: 0.9885597825, alpha: 1)
         
-        //navigationItem.title = "Breeds"
+        navigationItem.title = "Breeds"
         configureBreedsCollection()
     }
     
@@ -74,17 +73,12 @@ public class BreedsListViewController: UIViewController {
         interactor?.makeRequest(request: .breeds)
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     // MARK: - Main logic
+    
 }
 
-
-extension BreedsListViewController: BreedsListDisplayLogic {
-    public func displayData(viewModel: BreedsList.Model.ViewModel) {
+extension ClassicCollectionViewController: ClassicCollectionDisplayLogic {
+    public func displayData(viewModel: ClassicCollection.Model.ViewModel) {
         switch viewModel {
         case .displayBreeds(let items):
             breedsCollection.set(breeds: items)
@@ -93,9 +87,8 @@ extension BreedsListViewController: BreedsListDisplayLogic {
     }
 }
 
-extension BreedsListViewController: BreedsCollectionViewDelegate {
+extension ClassicCollectionViewController: ClassicCollectionDelegate {
     public func breedSelected(_ breedId: String) {
         router?.routeToInfo(breedId)
     }
 }
-

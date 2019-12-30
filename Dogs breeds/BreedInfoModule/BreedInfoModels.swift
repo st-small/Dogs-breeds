@@ -21,3 +21,10 @@ public enum BreedInfo {
         }
     }
 }
+
+public struct BreedInfoViewModel {
+    public let imageUrl: String
+    public let name: String
+    
+    public let rows: [BreedInfoRow]
+}

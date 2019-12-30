@@ -48,7 +48,7 @@ public class BreedInfoPresenter: BreedInfoPresentationLogic {
             elements.append(breedForRow)
         }
         
-        if let breeedGroup = breed.breedGroup {
+        if let breeedGroup = breed.breedGroup, !breeedGroup.isEmpty {
             let breeedGroupRow = BreedInfoRow()
             breeedGroupRow.setup(title: "Breed group:", text: breeedGroup)
             elements.append(breeedGroupRow)
@@ -58,20 +58,9 @@ public class BreedInfoPresenter: BreedInfoPresentationLogic {
         lifeSpanRow.setup(title: "Life span:", text: breed.lifeSpan)
         elements.append(lifeSpanRow)
         
-        if let temperament = breed.temperament {
-            let temperamentRow = BreedInfoRow()
-            temperamentRow.setup(title: "Temperament:", text: temperament)
-            elements.append(temperamentRow)
-        }
-        
         return elements
     }
 }
 
 
-public struct BreedInfoViewModel {
-    public let imageUrl: String
-    public let name: String
-    
-    public let rows: [BreedInfoRow]
-}
+
