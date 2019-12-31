@@ -37,7 +37,7 @@ public class CarouselCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         
-        register(BreedVerticalCell.self, forCellWithReuseIdentifier: BreedVerticalCell.reuseId)
+        register(CarouselCollectionCell.self, forCellWithReuseIdentifier: CarouselCollectionCell.reuseId)
     }
     
     public func set(breeds: [BreedItemModel]) {
@@ -58,7 +58,7 @@ extension CarouselCollectionView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = breeds[indexPath.item]
-        let cell = dequeueReusableCell(withReuseIdentifier: BreedVerticalCell.reuseId, for: indexPath) as! BreedVerticalCell
+        let cell = dequeueReusableCell(withReuseIdentifier: CarouselCollectionCell.reuseId, for: indexPath) as! CarouselCollectionCell
         let name = model.breeds.compactMap({ $0.name }).first ?? ""
         cell.set(image: model.url, title: name)
         
@@ -71,11 +71,6 @@ extension CarouselCollectionView: UICollectionViewDelegate {
         guard indexPath.item == currentCard else { return }
         let breed = breeds[indexPath.item]
         cellDelegate?.breedSelected(breed.id)
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BreedsHeaderView.reuseId, for: indexPath)
-        return header
     }
 }
 

@@ -59,7 +59,7 @@ public class BreedsCollectionView: UICollectionView {
         
         register(BreedCell.self, forCellWithReuseIdentifier: BreedCell.reuseId)
         register(BreedVerticalCell.self, forCellWithReuseIdentifier: BreedVerticalCell.reuseId)
-        register(BreedsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BreedsHeaderView.reuseId)
+        register(StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StretchyHeaderView.reuseId)
     }
     
     public func set(breeds: [BreedItemModel]) {
@@ -103,7 +103,7 @@ extension BreedsCollectionView: UICollectionViewDelegate {
     }
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BreedsHeaderView.reuseId, for: indexPath)
+        let header = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StretchyHeaderView.reuseId, for: indexPath)
         return header
     }
 }

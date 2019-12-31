@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		52024D9823B3D78700F1AA8C /* BreedsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52024D9723B3D78700F1AA8C /* BreedsCollectionView.swift */; };
 		52024D9A23B3D96700F1AA8C /* BreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52024D9923B3D96700F1AA8C /* BreedCell.swift */; };
+		52032EB323BB186200149D5A /* CarouselCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52032EB223BB186200149D5A /* CarouselCollectionCell.swift */; };
+		52032EB523BB18ED00149D5A /* StretchyHeaderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52032EB423BB18ED00149D5A /* StretchyHeaderCollectionCell.swift */; };
 		520925A723B12A2700EF989E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520925A623B12A2700EF989E /* AppDelegate.swift */; };
 		520925A923B12A2700EF989E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520925A823B12A2700EF989E /* SceneDelegate.swift */; };
 		520925B023B12A2800EF989E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520925AF23B12A2800EF989E /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 /* Begin PBXFileReference section */
 		52024D9723B3D78700F1AA8C /* BreedsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsCollectionView.swift; sourceTree = "<group>"; };
 		52024D9923B3D96700F1AA8C /* BreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCell.swift; sourceTree = "<group>"; };
+		52032EB223BB186200149D5A /* CarouselCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionCell.swift; sourceTree = "<group>"; };
+		52032EB423BB18ED00149D5A /* StretchyHeaderCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderCollectionCell.swift; sourceTree = "<group>"; };
 		520925A323B12A2700EF989E /* Dogs breeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dogs breeds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		520925A623B12A2700EF989E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520925A823B12A2700EF989E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,9 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				52024D9723B3D78700F1AA8C /* BreedsCollectionView.swift */,
-				52724E1023B934630042C1C4 /* BreedsHeaderView.swift */,
 				52724E0F23B91E580042C1C4 /* Cells */,
-				52724E1223B93C660042C1C4 /* Layouts */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -255,13 +257,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		52724E1223B93C660042C1C4 /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
 		52724E1523B940C60042C1C4 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +317,7 @@
 			children = (
 				52C1D6E123BA765A004F98E7 /* CarouselCollectionView.swift */,
 				52724E0B23B910AE0042C1C4 /* CarouselFlowLayout.swift */,
+				52032EB223BB186200149D5A /* CarouselCollectionCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -344,6 +340,8 @@
 			children = (
 				52C1D6F123BA7E2A004F98E7 /* StretchyHeaderCollectionView.swift */,
 				52724E1323B93C750042C1C4 /* StretchyHeaderLayout.swift */,
+				52724E1023B934630042C1C4 /* BreedsHeaderView.swift */,
+				52032EB423BB18ED00149D5A /* StretchyHeaderCollectionCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -438,6 +436,7 @@
 				52C1D6EF23BA7BE9004F98E7 /* StretchyHeaderInteractor.swift in Sources */,
 				520925C723B12BE300EF989E /* BreedsListInteractor.swift in Sources */,
 				52C1D6EE23BA7BE9004F98E7 /* StretchyHeaderViewController.swift in Sources */,
+				52032EB523BB18ED00149D5A /* StretchyHeaderCollectionCell.swift in Sources */,
 				520925A723B12A2700EF989E /* AppDelegate.swift in Sources */,
 				52C1D6CB23BA6A43004F98E7 /* ClassicCollectionModels.swift in Sources */,
 				52C1D6DE23BA741F004F98E7 /* CarouselCollectionViewController.swift in Sources */,
@@ -456,6 +455,7 @@
 				52724E0C23B910AE0042C1C4 /* CarouselFlowLayout.swift in Sources */,
 				52724E1F23B940E30042C1C4 /* MainModels.swift in Sources */,
 				52724E2023B940E30042C1C4 /* MainViewController.swift in Sources */,
+				52032EB323BB186200149D5A /* CarouselCollectionCell.swift in Sources */,
 				524E442C23B155B600F743E6 /* BreedItem.swift in Sources */,
 				52C1D6D223BA7077004F98E7 /* ClassicCollectionCell.swift in Sources */,
 				52C1D6DF23BA741F004F98E7 /* CarouselCollectionInteractor.swift in Sources */,

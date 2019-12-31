@@ -1,5 +1,5 @@
 //
-//  ClassicCollectionView.swift
+//  StretchyHeaderCollectionView.swift
 //  Dogs breeds
 //
 //  Created by Stanly Shiyanovskiy on 30.12.2019.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-public protocol ClassicCollectionDelegate: class {
+public protocol StretchyHeaderCollectionViewDelegate: class {
     func breedSelected(_ breedId: String)
 }
 
-public class ClassicCollectionView: UICollectionView {
+public class StretchyHeaderCollectionView: UICollectionView {
     
-    private var breeds = [BreedItemModel]()
-    public weak var cellDelegate: ClassicCollectionDelegate?
+    public var breeds = [BreedItemModel]()
+    public weak var cellDelegate: StretchyHeaderCollectionViewDelegate?
     
     // MARK: - Collection view constants
     private let columns: CGFloat = 3.0
@@ -25,8 +25,11 @@ public class ClassicCollectionView: UICollectionView {
     
     public init() {
         
-        let layout = UICollectionViewFlowLayout()
+        // Stretchy
+        let layout = StretchyHeaderLayout()
         layout.scrollDirection = .vertical
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 180)
+        layout.maximumStretchHeight = 400
     
         super.init(frame: .zero, collectionViewLayout: layout)
         
@@ -38,7 +41,8 @@ public class ClassicCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         
-        register(ClassicCollectionCell.self, forCellWithReuseIdentifier: ClassicCollectionCell.reuseId)
+        register(StretchyHeaderCollectionCell.self, forCellWithReuseIdentifier: StretchyHeaderCollectionCell.reuseId)
+        register(StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StretchyHeaderView.reuseId)
     }
     
     public func set(breeds: [BreedItemModel]) {
@@ -52,14 +56,14 @@ public class ClassicCollectionView: UICollectionView {
     }
 }
 
-extension ClassicCollectionView: UICollectionViewDataSource {
+extension StretchyHeaderCollectionView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return breeds.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = breeds[indexPath.item]
-        let cell = dequeueReusableCell(withReuseIdentifier: ClassicCollectionCell.reuseId, for: indexPath) as! ClassicCollectionCell
+        let cell = dequeueReusableCell(withReuseIdentifier: StretchyHeaderCollectionCell.reuseId, for: indexPath) as! StretchyHeaderCollectionCell
         let name = model.breeds.compactMap({ $0.name }).first ?? ""
         cell.set(image: model.url, title: name)
         
@@ -67,18 +71,23 @@ extension ClassicCollectionView: UICollectionViewDataSource {
     }
 }
 
-extension ClassicCollectionView: UICollectionViewDelegate {
+extension StretchyHeaderCollectionView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let breed = breeds[indexPath.item]
         cellDelegate?.breedSelected(breed.id)
     }
+    
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StretchyHeaderView.reuseId, for: indexPath)
+        return header
+    }
 }
 
-extension ClassicCollectionView: UICollectionViewDelegateFlowLayout {
+extension StretchyHeaderCollectionView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = Int(collectionView.frame.width / columns - (inset + spacing))
-        
+
         return CGSize(width: width, height: width)
     }
 
@@ -92,5 +101,13 @@ extension ClassicCollectionView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return lineSpacing
+    }
+}
+
+extension StretchyHeaderCollectionView: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = bounds.width - 200
+        guard scrollView.contentOffset.y < -offsetY else { return }
+        scrollView.contentOffset.y = -offsetY
     }
 }
