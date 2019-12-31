@@ -20,7 +20,8 @@ public class MainInteractor: MainBusinessLogic, MainDataStore {
     
     public var collectionTypes: [String] = ["Classic collection view",
                                             "Carousel collection view",
-                                            "Stretchy header collection view"]
+                                            "Stretchy header collection view",
+                                            "Custom view layout collection view"]
     
     public var presenter: MainPresentationLogic?
     

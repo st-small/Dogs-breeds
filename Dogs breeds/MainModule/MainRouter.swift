@@ -30,6 +30,8 @@ public class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
             showCarouselCollectionView()
         case 2:
             showStretchyHeaderCollectionView()
+        case 3:
+            showCustomLayoutCollectionView()
         default: break
         }
     }
@@ -46,6 +48,11 @@ public class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
     
     private func showStretchyHeaderCollectionView() {
         let vc = StretchyHeaderViewController()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showCustomLayoutCollectionView() {
+        let vc = CustomLayoutViewController()
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

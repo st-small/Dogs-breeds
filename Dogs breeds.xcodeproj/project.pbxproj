@@ -65,6 +65,14 @@
 		52C1D6EE23BA7BE9004F98E7 /* StretchyHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D6E823BA7BE9004F98E7 /* StretchyHeaderViewController.swift */; };
 		52C1D6EF23BA7BE9004F98E7 /* StretchyHeaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D6E923BA7BE9004F98E7 /* StretchyHeaderInteractor.swift */; };
 		52C1D6F223BA7E2A004F98E7 /* StretchyHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1D6F123BA7E2A004F98E7 /* StretchyHeaderCollectionView.swift */; };
+		52F3CE9623BB69D900C430EE /* CustomLayoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9023BB69D900C430EE /* CustomLayoutPresenter.swift */; };
+		52F3CE9823BB69D900C430EE /* CustomLayoutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9223BB69D900C430EE /* CustomLayoutRouter.swift */; };
+		52F3CE9923BB69D900C430EE /* CustomLayoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9323BB69D900C430EE /* CustomLayoutModels.swift */; };
+		52F3CE9A23BB69D900C430EE /* CustomLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9423BB69D900C430EE /* CustomLayoutViewController.swift */; };
+		52F3CE9B23BB69D900C430EE /* CustomLayoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9523BB69D900C430EE /* CustomLayoutInteractor.swift */; };
+		52F3CE9E23BB6CAE00C430EE /* CustomLayoutCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9D23BB6CAE00C430EE /* CustomLayoutCollectionView.swift */; };
+		52F3CEA023BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9F23BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift */; };
+		52F3CEA223BB6FF400C430EE /* CustomViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEA123BB6FF400C430EE /* CustomViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +131,14 @@
 		52C1D6E823BA7BE9004F98E7 /* StretchyHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderViewController.swift; sourceTree = "<group>"; };
 		52C1D6E923BA7BE9004F98E7 /* StretchyHeaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderInteractor.swift; sourceTree = "<group>"; };
 		52C1D6F123BA7E2A004F98E7 /* StretchyHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderCollectionView.swift; sourceTree = "<group>"; };
+		52F3CE9023BB69D900C430EE /* CustomLayoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutPresenter.swift; sourceTree = "<group>"; };
+		52F3CE9223BB69D900C430EE /* CustomLayoutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutRouter.swift; sourceTree = "<group>"; };
+		52F3CE9323BB69D900C430EE /* CustomLayoutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutModels.swift; sourceTree = "<group>"; };
+		52F3CE9423BB69D900C430EE /* CustomLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutViewController.swift; sourceTree = "<group>"; };
+		52F3CE9523BB69D900C430EE /* CustomLayoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutInteractor.swift; sourceTree = "<group>"; };
+		52F3CE9D23BB6CAE00C430EE /* CustomLayoutCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutCollectionView.swift; sourceTree = "<group>"; };
+		52F3CE9F23BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
+		52F3CEA123BB6FF400C430EE /* CustomViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +191,7 @@
 				52C1D6C123BA69F5004F98E7 /* ClassicModule */,
 				52C1D6D323BA7362004F98E7 /* CarouselModule */,
 				52C1D6E323BA7BC9004F98E7 /* StretchyHeaderModule */,
+				52F3CE8F23BB69AF00C430EE /* CustomLayoutModule */,
 				520925BA23B12A5D00EF989E /* BreedsListModule */,
 				52724DF923B8EB7E0042C1C4 /* BreedInfoModule */,
 				520925BB23B12BC600EF989E /* Environment */,
@@ -346,6 +363,29 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		52F3CE8F23BB69AF00C430EE /* CustomLayoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				52F3CE9023BB69D900C430EE /* CustomLayoutPresenter.swift */,
+				52F3CE9223BB69D900C430EE /* CustomLayoutRouter.swift */,
+				52F3CE9323BB69D900C430EE /* CustomLayoutModels.swift */,
+				52F3CE9423BB69D900C430EE /* CustomLayoutViewController.swift */,
+				52F3CE9523BB69D900C430EE /* CustomLayoutInteractor.swift */,
+				52F3CE9C23BB6C7E00C430EE /* Common */,
+			);
+			path = CustomLayoutModule;
+			sourceTree = "<group>";
+		};
+		52F3CE9C23BB6C7E00C430EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52F3CE9D23BB6CAE00C430EE /* CustomLayoutCollectionView.swift */,
+				52F3CE9F23BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift */,
+				52F3CEA123BB6FF400C430EE /* CustomViewLayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,12 +489,15 @@
 				52C1D6D023BA6ECE004F98E7 /* ClassicCollectionView.swift in Sources */,
 				52724E1E23B940E30042C1C4 /* MainRouter.swift in Sources */,
 				52724E0A23B8FE880042C1C4 /* BreedInfoRow.swift in Sources */,
+				52F3CE9623BB69D900C430EE /* CustomLayoutPresenter.swift in Sources */,
 				52C1D6DA23BA741F004F98E7 /* CarouselCollectionPresenter.swift in Sources */,
 				52C1D6CC23BA6A43004F98E7 /* ClassicCollectionViewController.swift in Sources */,
 				52724E0E23B91E530042C1C4 /* BreedVerticalCell.swift in Sources */,
 				52724E0C23B910AE0042C1C4 /* CarouselFlowLayout.swift in Sources */,
 				52724E1F23B940E30042C1C4 /* MainModels.swift in Sources */,
+				52F3CE9A23BB69D900C430EE /* CustomLayoutViewController.swift in Sources */,
 				52724E2023B940E30042C1C4 /* MainViewController.swift in Sources */,
+				52F3CE9B23BB69D900C430EE /* CustomLayoutInteractor.swift in Sources */,
 				52032EB323BB186200149D5A /* CarouselCollectionCell.swift in Sources */,
 				524E442C23B155B600F743E6 /* BreedItem.swift in Sources */,
 				52C1D6D223BA7077004F98E7 /* ClassicCollectionCell.swift in Sources */,
@@ -473,13 +516,18 @@
 				52C1D6DD23BA741F004F98E7 /* CarouselCollectionModels.swift in Sources */,
 				52724E2123B940E30042C1C4 /* MainInteractor.swift in Sources */,
 				520925C423B12BE300EF989E /* BreedsListRouter.swift in Sources */,
+				52F3CE9923BB69D900C430EE /* CustomLayoutModels.swift in Sources */,
 				52024D9823B3D78700F1AA8C /* BreedsCollectionView.swift in Sources */,
 				520925CD23B130DF00EF989E /* Constants.swift in Sources */,
+				52F3CE9823BB69D900C430EE /* CustomLayoutRouter.swift in Sources */,
 				524E442E23B155D200F743E6 /* Size.swift in Sources */,
 				52724E0223B8EBA20042C1C4 /* BreedInfoRouter.swift in Sources */,
 				52724E0323B8EBA20042C1C4 /* BreedInfoModels.swift in Sources */,
+				52F3CEA023BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift in Sources */,
 				52C1D6CD23BA6A43004F98E7 /* ClassicCollectionInteractor.swift in Sources */,
+				52F3CE9E23BB6CAE00C430EE /* CustomLayoutCollectionView.swift in Sources */,
 				52C1D6EA23BA7BE9004F98E7 /* StretchyHeaderPresenter.swift in Sources */,
+				52F3CEA223BB6FF400C430EE /* CustomViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
