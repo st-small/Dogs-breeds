@@ -32,6 +32,8 @@ public class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
             showStretchyHeaderCollectionView()
         case 3:
             showCustomLayoutCollectionView()
+        case 4:
+            showMosaicLayoutCollectionView()
         default: break
         }
     }
@@ -53,6 +55,11 @@ public class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
     
     private func showCustomLayoutCollectionView() {
         let vc = CustomLayoutViewController()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showMosaicLayoutCollectionView() {
+        let vc = MosaicLayoutViewController()
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

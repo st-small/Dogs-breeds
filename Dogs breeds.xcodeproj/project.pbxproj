@@ -73,6 +73,14 @@
 		52F3CE9E23BB6CAE00C430EE /* CustomLayoutCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9D23BB6CAE00C430EE /* CustomLayoutCollectionView.swift */; };
 		52F3CEA023BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CE9F23BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift */; };
 		52F3CEA223BB6FF400C430EE /* CustomViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEA123BB6FF400C430EE /* CustomViewLayout.swift */; };
+		52F3CEAB23BB740600C430EE /* MosaicLayoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEA523BB740600C430EE /* MosaicLayoutPresenter.swift */; };
+		52F3CEAD23BB740600C430EE /* MosaicLayoutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEA723BB740600C430EE /* MosaicLayoutRouter.swift */; };
+		52F3CEAE23BB740600C430EE /* MosaicLayoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEA823BB740600C430EE /* MosaicLayoutModels.swift */; };
+		52F3CEAF23BB740600C430EE /* MosaicLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEA923BB740600C430EE /* MosaicLayoutViewController.swift */; };
+		52F3CEB023BB740600C430EE /* MosaicLayoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEAA23BB740600C430EE /* MosaicLayoutInteractor.swift */; };
+		52F3CEB323BB75D300C430EE /* MosaicLayoutCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEB223BB75D300C430EE /* MosaicLayoutCollectionView.swift */; };
+		52F3CEB523BB75EE00C430EE /* MosaicLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEB423BB75EE00C430EE /* MosaicLayoutCollectionViewCell.swift */; };
+		52F3CEB723BB761A00C430EE /* MosaicViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3CEB623BB761A00C430EE /* MosaicViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +147,14 @@
 		52F3CE9D23BB6CAE00C430EE /* CustomLayoutCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutCollectionView.swift; sourceTree = "<group>"; };
 		52F3CE9F23BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		52F3CEA123BB6FF400C430EE /* CustomViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewLayout.swift; sourceTree = "<group>"; };
+		52F3CEA523BB740600C430EE /* MosaicLayoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutPresenter.swift; sourceTree = "<group>"; };
+		52F3CEA723BB740600C430EE /* MosaicLayoutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutRouter.swift; sourceTree = "<group>"; };
+		52F3CEA823BB740600C430EE /* MosaicLayoutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutModels.swift; sourceTree = "<group>"; };
+		52F3CEA923BB740600C430EE /* MosaicLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutViewController.swift; sourceTree = "<group>"; };
+		52F3CEAA23BB740600C430EE /* MosaicLayoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutInteractor.swift; sourceTree = "<group>"; };
+		52F3CEB223BB75D300C430EE /* MosaicLayoutCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutCollectionView.swift; sourceTree = "<group>"; };
+		52F3CEB423BB75EE00C430EE /* MosaicLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
+		52F3CEB623BB761A00C430EE /* MosaicViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +208,7 @@
 				52C1D6D323BA7362004F98E7 /* CarouselModule */,
 				52C1D6E323BA7BC9004F98E7 /* StretchyHeaderModule */,
 				52F3CE8F23BB69AF00C430EE /* CustomLayoutModule */,
+				52F3CEA323BB72BC00C430EE /* MosaicLayoutModule */,
 				520925BA23B12A5D00EF989E /* BreedsListModule */,
 				52724DF923B8EB7E0042C1C4 /* BreedInfoModule */,
 				520925BB23B12BC600EF989E /* Environment */,
@@ -386,6 +403,29 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		52F3CEA323BB72BC00C430EE /* MosaicLayoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				52F3CEA523BB740600C430EE /* MosaicLayoutPresenter.swift */,
+				52F3CEA723BB740600C430EE /* MosaicLayoutRouter.swift */,
+				52F3CEA823BB740600C430EE /* MosaicLayoutModels.swift */,
+				52F3CEA923BB740600C430EE /* MosaicLayoutViewController.swift */,
+				52F3CEAA23BB740600C430EE /* MosaicLayoutInteractor.swift */,
+				52F3CEB123BB75B000C430EE /* Common */,
+			);
+			path = MosaicLayoutModule;
+			sourceTree = "<group>";
+		};
+		52F3CEB123BB75B000C430EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52F3CEB223BB75D300C430EE /* MosaicLayoutCollectionView.swift */,
+				52F3CEB423BB75EE00C430EE /* MosaicLayoutCollectionViewCell.swift */,
+				52F3CEB623BB761A00C430EE /* MosaicViewLayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,14 +530,17 @@
 				52724E1E23B940E30042C1C4 /* MainRouter.swift in Sources */,
 				52724E0A23B8FE880042C1C4 /* BreedInfoRow.swift in Sources */,
 				52F3CE9623BB69D900C430EE /* CustomLayoutPresenter.swift in Sources */,
+				52F3CEB723BB761A00C430EE /* MosaicViewLayout.swift in Sources */,
 				52C1D6DA23BA741F004F98E7 /* CarouselCollectionPresenter.swift in Sources */,
 				52C1D6CC23BA6A43004F98E7 /* ClassicCollectionViewController.swift in Sources */,
 				52724E0E23B91E530042C1C4 /* BreedVerticalCell.swift in Sources */,
 				52724E0C23B910AE0042C1C4 /* CarouselFlowLayout.swift in Sources */,
 				52724E1F23B940E30042C1C4 /* MainModels.swift in Sources */,
 				52F3CE9A23BB69D900C430EE /* CustomLayoutViewController.swift in Sources */,
+				52F3CEAB23BB740600C430EE /* MosaicLayoutPresenter.swift in Sources */,
 				52724E2023B940E30042C1C4 /* MainViewController.swift in Sources */,
 				52F3CE9B23BB69D900C430EE /* CustomLayoutInteractor.swift in Sources */,
+				52F3CEB523BB75EE00C430EE /* MosaicLayoutCollectionViewCell.swift in Sources */,
 				52032EB323BB186200149D5A /* CarouselCollectionCell.swift in Sources */,
 				524E442C23B155B600F743E6 /* BreedItem.swift in Sources */,
 				52C1D6D223BA7077004F98E7 /* ClassicCollectionCell.swift in Sources */,
@@ -511,7 +554,9 @@
 				52724E0723B8FC050042C1C4 /* String + Extension.swift in Sources */,
 				52C1D6E223BA765A004F98E7 /* CarouselCollectionView.swift in Sources */,
 				52C1D6EC23BA7BE9004F98E7 /* StretchyHeaderRouter.swift in Sources */,
+				52F3CEAD23BB740600C430EE /* MosaicLayoutRouter.swift in Sources */,
 				52724E0523B8EBA20042C1C4 /* BreedInfoInteractor.swift in Sources */,
+				52F3CEB023BB740600C430EE /* MosaicLayoutInteractor.swift in Sources */,
 				520925C523B12BE300EF989E /* BreedsListModels.swift in Sources */,
 				52C1D6DD23BA741F004F98E7 /* CarouselCollectionModels.swift in Sources */,
 				52724E2123B940E30042C1C4 /* MainInteractor.swift in Sources */,
@@ -521,8 +566,11 @@
 				520925CD23B130DF00EF989E /* Constants.swift in Sources */,
 				52F3CE9823BB69D900C430EE /* CustomLayoutRouter.swift in Sources */,
 				524E442E23B155D200F743E6 /* Size.swift in Sources */,
+				52F3CEAF23BB740600C430EE /* MosaicLayoutViewController.swift in Sources */,
 				52724E0223B8EBA20042C1C4 /* BreedInfoRouter.swift in Sources */,
+				52F3CEB323BB75D300C430EE /* MosaicLayoutCollectionView.swift in Sources */,
 				52724E0323B8EBA20042C1C4 /* BreedInfoModels.swift in Sources */,
+				52F3CEAE23BB740600C430EE /* MosaicLayoutModels.swift in Sources */,
 				52F3CEA023BB6CD600C430EE /* CustomLayoutCollectionViewCell.swift in Sources */,
 				52C1D6CD23BA6A43004F98E7 /* ClassicCollectionInteractor.swift in Sources */,
 				52F3CE9E23BB6CAE00C430EE /* CustomLayoutCollectionView.swift in Sources */,

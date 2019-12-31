@@ -1,5 +1,5 @@
 //
-//  CustomLayoutCollectionViewCell.swift
+//  MosaicLayoutCollectionViewCell.swift
 //  Dogs breeds
 //
 //  Created by Stanly Shiyanovskiy on 31.12.2019.
@@ -9,9 +9,9 @@
 import SDWebImage
 import UIKit
 
-public class CustomLayoutCollectionViewCell: UICollectionViewCell {
+public class MosaicLayoutCollectionViewCell: UICollectionViewCell {
     
-    public static let reuseId = "CustomLayoutCollectionViewCell"
+    public static let reuseId = "MosaicLayoutCollectionViewCell"
     
     // MARK: - UI elements
     private var elementsContainer: UIView = {
@@ -25,8 +25,8 @@ public class CustomLayoutCollectionViewCell: UICollectionViewCell {
     private var breedImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .clear
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .red
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -34,13 +34,24 @@ public class CustomLayoutCollectionViewCell: UICollectionViewCell {
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textAlignment = .center
         label.lineBreakMode = .byTruncatingTail
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         return label
     }()
+    
+    private var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        label.textAlignment = .center
+        label.lineBreakMode = .byTruncatingTail
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private var imageHeight: CGFloat = 0
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,7 +71,7 @@ public class CustomLayoutCollectionViewCell: UICollectionViewCell {
         }
         
         elementsContainer.layer.cornerRadius = frame.width / 8
-        elementsContainer.layer.borderWidth = 6.0
+        elementsContainer.layer.borderWidth = 3.0
         elementsContainer.layer.borderColor = UIColor.white.cgColor
     }
     
@@ -68,17 +79,26 @@ public class CustomLayoutCollectionViewCell: UICollectionViewCell {
         elementsContainer.addSubview(breedImage)
         breedImage.snp.remakeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(elementsContainer.snp.width)
+            make.height.equalTo(imageHeight)
         }
     }
 
     private func configureTitle() {
         addSubview(titleLabel)
         titleLabel.snp.remakeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.top.equalTo(breedImage.snp.bottom)
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.top.equalTo(breedImage.snp.bottom).offset(8)
+        }
+    }
+    
+    private func configureDescription() {
+        addSubview(descriptionLabel)
+        descriptionLabel.snp.remakeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(4)
+            make.bottom.equalToSuperview().offset(-12)
         }
     }
 
@@ -86,12 +106,21 @@ public class CustomLayoutCollectionViewCell: UICollectionViewCell {
         breedImage.image = nil
     }
 
-    public func set(image: String, title: String) {
+    public func set(image: String, title: String, description: String) {
         breedImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
         breedImage.sd_setImage(with: URL(string: image))
         titleLabel.attributedText = title.prepareBoldAttributedString()
-
+        descriptionLabel.attributedText = description.prepareRegularAttributedString()
+        
         configureImage()
         configureTitle()
+        configureDescription()
+    }
+    
+    public override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        
+        guard let attributes = layoutAttributes as? MosaicLayoutAttributes else { return }
+        imageHeight = attributes.imageHeight
     }
 }
