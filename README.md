@@ -16,6 +16,13 @@
 ## Получение данных
 Для упрощения, данные являются статичными и лежать в самом проекте в файле breeds.json. Парсинг проивзодится посредством Codable структур.
 
+## Внедрение зависимостей
+Для зависимостей был использован Swift package manager. Задействованы библиотеки:
+● Alamofire (https://github.com/Alamofire/Alamofire.git)
+● SDWebImage (https://github.com/SDWebImage/SDWebImage.git)
+● RappleProgressHUD (https://github.com/rjeprasad/RappleProgressHUD.git)
+● SnapKit (https://github.com/SnapKit/SnapKit.git)
+
 ## Описание типов коллекций:
 ### Классический
 Обычное отображение данных в ячейках с возможностью перехода к детальному просмотру.
