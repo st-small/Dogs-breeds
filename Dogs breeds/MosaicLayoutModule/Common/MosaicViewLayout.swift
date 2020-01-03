@@ -45,8 +45,8 @@ public class MosaicViewLayout: UICollectionViewLayout {
     public var numberOfColumns = 0
     public weak var delegate: MosaicLayoutDelegate?
     public var cellPadding: CGFloat = 0
+    public var cache = [MosaicLayoutAttributes]()
     
-    private var cache = [MosaicLayoutAttributes]()
     private var contentHeight: CGFloat = 0
     private var width: CGFloat {
         get {

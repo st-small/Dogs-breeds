@@ -26,7 +26,7 @@ public class MosaicLayoutCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .clear
         imageView.clipsToBounds = true
         return imageView
     }()
