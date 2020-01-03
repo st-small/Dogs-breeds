@@ -18,9 +18,13 @@
 
 ## Внедрение зависимостей
 Для зависимостей был использован Swift package manager. Задействованы библиотеки:
+
 ● Alamofire (https://github.com/Alamofire/Alamofire.git)
+
 ● SDWebImage (https://github.com/SDWebImage/SDWebImage.git)
+
 ● RappleProgressHUD (https://github.com/rjeprasad/RappleProgressHUD.git)
+
 ● SnapKit (https://github.com/SnapKit/SnapKit.git)
 
 ## Описание типов коллекций:
