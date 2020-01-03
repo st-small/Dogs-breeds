@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": "5.0.0-rc.3",
+          "revision": "2cbf59935fbb1f26e352ce4db53f1cf9408d5313",
+          "version": null
+        }
+      },
+      {
+        "package": "RappleProgressHUD",
+        "repositoryURL": "https://github.com/rjeprasad/RappleProgressHUD.git",
+        "state": {
+          "branch": null,
+          "revision": "114d8ff6198086c9ab8f339bddcb76472df1b0a8",
+          "version": "4.0.3"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": null,
+          "revision": "7ef9a314b12c1a31edb0d09d41fcba93143fe772",
+          "version": "5.4.0"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
