@@ -6,6 +6,7 @@
 //  Copyright © 2019 Stanly Shiyanovskiy. All rights reserved.
 //
 
+import SnapKit
 import UIKit
 
 public class StretchyHeaderView: UICollectionReusableView {
